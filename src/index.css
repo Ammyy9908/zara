@@ -73,12 +73,15 @@ header.scrolled{
     padding: 15px 0;
 }
 
+header a svg,
 header a img{
     height: 35px;
     width: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
+header a:hover svg,
 header a:hover img{
     transform: scale(1.05);
 }
@@ -128,6 +131,10 @@ nav ul li a:hover::after{
     background-color: #333;
     transform: translateY(-2px);
     opacity: 1;
+}
+
+.cart-btn::after{
+    display: none;
 }
 
 /* Hero Section */
@@ -363,8 +370,6 @@ nav ul li a:hover::after{
     opacity: 1;
 }
 
-
-
 /* Section Four - Grid Gallery */
 .section-four{
     margin-top: 80px;
@@ -414,6 +419,7 @@ nav ul li a:hover::after{
 .section-grid img:hover{
     transform: scale(1.15);
 }
+
 /* Footer */
 footer{
     width: 90%;
@@ -436,9 +442,11 @@ footer{
     }
 }
 
+.footer-logo svg,
 .footer-logo img{
     height: 30px;
     width: auto;
+    display: block;
 }
 
 .footer-nav{
@@ -528,6 +536,25 @@ footer{
     background-color: #333;
 }
 
+.footer-subscription-form button.is-success{
+    background-color: #4CAF50;
+}
+
+.form-error{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #b42318;
+}
+
+.site-credit{
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    opacity: 0.6;
+}
+
 .section-header{
     font-size: 80px;
     font-weight: 700;
@@ -539,6 +566,28 @@ footer{
     z-index: 10;
     pointer-events: none;
     letter-spacing: -2px;
+}
+
+/* Reveal on scroll */
+.reveal{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+    .section-card.card2.reveal.is-visible{
+        transform: translateY(-80px);
+    }
+
+    .section-card.card2.reveal.is-visible:hover{
+        transform: translateY(-85px);
+    }
 }
 
 /* Mobile Menu Button */
@@ -554,7 +603,7 @@ footer{
     .mobile-menu-btn{
         display: block;
     }
-    
+
     nav ul{
         display: none;
         position: absolute;
@@ -566,7 +615,7 @@ footer{
         padding: 20px;
         gap: 20px;
     }
-    
+
     nav ul.active{
         display: flex;
     }
@@ -577,7 +626,7 @@ footer{
     .top-section-content h1{
         font-size: 72px;
     }
-    
+
     .section-header{
         font-size: 100px;
     }
@@ -587,15 +636,15 @@ footer{
     .top-hero-image1{
         display: block;
     }
-    
+
     .section-two-content-secondary{
         display: block;
     }
-    
+
     .top-section-content h1{
         font-size: 96px;
     }
-    
+
     .section-header{
         font-size: 120px;
     }
